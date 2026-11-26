@@ -44,6 +44,12 @@
             "align": "center",
             "stackOn": "tablet"
           },
+          "styles": {
+            "base": {
+              "position": "relative",
+              "zIndex": 1
+            }
+          },
           "children": [
             {
               "id": "hero-copy",
@@ -60,6 +66,11 @@
                     "eyebrow": "New & Used School Buses",
                     "text": "Florida's Premier IC Bus Dealer",
                     "headingLevel": 1
+                  },
+                  "styles": {
+                    "mobile": {
+                      "fontSize": 16
+                    }
                   }
                 },
                 {
@@ -84,13 +95,7 @@
                 }
               ]
             }
-          ],
-          "styles": {
-            "base": {
-              "position": "relative",
-              "zIndex": 1
-            }
-          }
+          ]
         }
       ]
     },
