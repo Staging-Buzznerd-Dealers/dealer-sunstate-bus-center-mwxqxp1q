@@ -54,9 +54,15 @@ for the next dealer repo generated from the template.
 
 ## What the repo does differently, and why
 
-- **Header over the hero.** The handoff lays the header on top of the hero photo.
-  The renderer's template chrome sits above page content, so the repo draws a solid
-  ink header followed by the hero. The photo, scrim and copy are unchanged.
+- **Header over the hero.** The renderer's template chrome is normally in the page
+  flow, so the repo uses two templates sharing the same header, footer and utility
+  bar components. `hero-overlay` (home and financing) lays the header out of flow,
+  directly under the utility bar, so the hero photo runs behind it as in the design.
+  `default` keeps a solid ink header for pages without a hero (blog, inventory).
+- **Logo height.** The renderer's `.bz-block img{height:auto}` overrides the logo
+  block's height setting, so `site/custom-code.json` restores it. This is a platform
+  bug worth reporting.
+- **Nav search icon**: not built; there is no site-search page to point it at.
 - **Location filter chips.** The handoff filters 17 hand-typed location cards by
   department and state. The repo uses the live `locations-map` widget, so the
   cards come from Admin → Locations and are never stale. Authored nodes cannot yet

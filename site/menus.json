@@ -75,7 +75,7 @@
         },
         {
           "id": "u-locations",
-          "label": "Locations",
+          "label": "◎ Locations",
           "type": "url",
           "url": "/#locations"
         }

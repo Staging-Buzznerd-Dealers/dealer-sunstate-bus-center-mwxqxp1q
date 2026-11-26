@@ -1,0 +1,183 @@
+{
+  "version": 2,
+  "id": "site-footer",
+  "name": "Site footer",
+  "css": "[data-bz-node=\"sf\"] .bz-container{max-width:var(--container)}\n[data-bz-node=\"sf\"] h4{font:700 12px/1 var(--font-body);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 var(--space-3)}\n[data-bz-node=\"sf\"] .bz-navitem > a{color:#B8B0A2;font:500 14px/1.4 var(--font-body);text-transform:none;letter-spacing:0;padding:0}\n[data-bz-node=\"sf\"] .bz-navitem > a:hover{color:#fff}\n[data-bz-node=\"sf-about\"] p{color:#B8B0A2;font-size:14px;line-height:1.7;max-width:60ch;margin-top:var(--space-4)}\n[data-bz-node=\"sf-legal\"] p{margin:0;font-size:13px;color:#8A8273}\n[data-bz-node=\"sf-legal-menu\"] .bz-navitem > a{font-size:13px;color:#8A8273}\n[data-bz-node=\"sf-built\"] img{max-height:22px;width:auto;margin-left:auto}\n[data-bz-node=\"sf-bottom\"]{border-top:1px solid rgba(255,255,255,.12);margin-top:var(--space-6);padding-top:var(--space-4)}",
+  "props": [
+    {
+      "key": "about",
+      "type": "textarea",
+      "label": "About text"
+    },
+    {
+      "key": "copyright",
+      "type": "text",
+      "label": "Copyright line"
+    },
+    {
+      "key": "groups",
+      "type": "list",
+      "label": "Link columns",
+      "fields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Heading"
+        },
+        {
+          "key": "menuId",
+          "type": "text",
+          "label": "Menu id"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "sf",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 7
+      },
+      "children": [
+        {
+          "id": "sf-row",
+          "type": "row",
+          "props": {
+            "gap": 6,
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "sf-brand",
+              "type": "column",
+              "props": {
+                "span": 6
+              },
+              "children": [
+                {
+                  "id": "sf-logo",
+                  "type": "logo",
+                  "props": {
+                    "image": {
+                      "src": "/img/sun-state-logo.png",
+                      "alt": "Sun State Bus Centers"
+                    },
+                    "url": "/",
+                    "height": 44
+                  }
+                },
+                {
+                  "id": "sf-about",
+                  "type": "text",
+                  "props": {
+                    "text": "{{about}}",
+                    "width": "full"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sf-group",
+              "type": "column",
+              "props": {
+                "span": 2,
+                "repeat": "groups"
+              },
+              "children": [
+                {
+                  "id": "sf-group-h",
+                  "type": "heading",
+                  "props": {
+                    "text": "{{title}}",
+                    "headingLevel": 3
+                  }
+                },
+                {
+                  "id": "sf-group-m",
+                  "type": "menu",
+                  "props": {
+                    "menuId": "{{menuId}}",
+                    "layout": "vertical"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sf-bottom",
+          "type": "row",
+          "props": {
+            "gap": 4,
+            "align": "center",
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "sf-legal",
+              "type": "column",
+              "props": {
+                "span": 6,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "sf-copy",
+                  "type": "text",
+                  "props": {
+                    "text": "{{copyright}}",
+                    "width": "full"
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sf-legal-menu",
+              "type": "column",
+              "props": {
+                "span": 4,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "sf-legal-m",
+                  "type": "menu",
+                  "props": {
+                    "menuId": "legal",
+                    "layout": "horizontal",
+                    "align": "end",
+                    "depth": 1
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sf-built",
+              "type": "column",
+              "props": {
+                "span": 2,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "sf-built-img",
+                  "type": "image",
+                  "props": {
+                    "image": {
+                      "src": "/img/buzznerd-logo-white-cropped.png",
+                      "alt": "Built by Buzznerd"
+                    },
+                    "width": "prose"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
