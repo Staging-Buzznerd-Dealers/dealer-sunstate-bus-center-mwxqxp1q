@@ -76,6 +76,9 @@
                     "widget": "inventory-search",
                     "config": {
                       "placeholder": "Search by stock #, model, or VIN"
+                    },
+                    "snapshot": {
+                      "types": []
                     }
                   }
                 }
@@ -175,6 +178,9 @@
                     "config": {
                       "heading": "Featured Listings",
                       "limit": 4
+                    },
+                    "snapshot": {
+                      "listings": []
                     }
                   }
                 }
@@ -482,6 +488,60 @@
                     "config": {
                       "heading": "Find a Location",
                       "pagePathPrefix": "/locations"
+                    },
+                    "snapshot": {
+                      "locations": [
+                        {
+                          "id": "33",
+                          "name": "Davenport",
+                          "subtitle": "",
+                          "slug": "main",
+                          "num": "01",
+                          "href": "/locations/main",
+                          "streetAddress": "Sun State International FL 41609 Hwy. 27, Davenport, FL 33837",
+                          "city": "Davenport",
+                          "region": "FL",
+                          "postalCode": "33837",
+                          "country": null,
+                          "latitude": null,
+                          "longitude": null,
+                          "phone": null,
+                          "phoneUrl": null,
+                          "mapUrl": "https://www.google.com/maps/search/?api=1&query=Sun%20State%20International%20FL%2041609%20Hwy.%2027%2C%20Davenport%2C%20FL%2033837%2C%20Davenport%2C%20FL%2C%2033837",
+                          "email": null,
+                          "brands": "",
+                          "services": "",
+                          "perks": "",
+                          "brandKeys": "",
+                          "perkKeys": "",
+                          "perk1": null,
+                          "perk2": null,
+                          "perk3": null,
+                          "departments": "",
+                          "hours": "",
+                          "phone2": null,
+                          "phone2Url": null,
+                          "phone3": null,
+                          "phone3Url": null,
+                          "group": null,
+                          "groupKey": null,
+                          "photo": {
+                            "src": "",
+                            "alt": ""
+                          },
+                          "banner": {
+                            "src": "",
+                            "alt": ""
+                          },
+                          "brandRows": [],
+                          "serviceRows": [],
+                          "perkRows": [],
+                          "departmentRows": [],
+                          "hoursRows": []
+                        }
+                      ],
+                      "brandFacets": [],
+                      "perkFacets": []
                     }
                   }
                 }
