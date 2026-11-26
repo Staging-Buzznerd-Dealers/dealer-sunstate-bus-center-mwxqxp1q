@@ -1,0 +1,73 @@
+{
+  "version": 2,
+  "id": "footer-links",
+  "name": "Footer link columns",
+  "props": [
+    {
+      "key": "groups",
+      "type": "list",
+      "label": "Columns",
+      "fields": [
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Heading"
+        },
+        {
+          "key": "menuId",
+          "type": "text",
+          "label": "Menu id"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "fl",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 0
+      },
+      "children": [
+        {
+          "id": "fl-row",
+          "type": "row",
+          "props": {
+            "gap": 6,
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "fl-col",
+              "type": "column",
+              "props": {
+                "span": 4,
+                "repeat": "groups"
+              },
+              "children": [
+                {
+                  "id": "fl-h",
+                  "type": "heading",
+                  "props": {
+                    "text": "{{title}}",
+                    "headingLevel": 4
+                  }
+                },
+                {
+                  "id": "fl-m",
+                  "type": "menu",
+                  "props": {
+                    "menuId": "{{menuId}}",
+                    "layout": "vertical"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,107 +1,605 @@
 {
-  "version": 1,
-  "blocks": [
+  "version": 2,
+  "nodes": [
     {
       "id": "hero",
-      "type": "hero",
+      "type": "section",
       "props": {
-        "headingLevel": 1,
-        "eyebrow": "Trucks · Parts · Service",
-        "headline": "Your trusted partner on the road.",
-        "subhead": "New and used trucks, expert service, and genuine parts — all from one dealer you can rely on.",
-        "showSearch": true,
-        "ctas": [{ "ctaId": "browse-inventory" }, { "ctaId": "request-quote", "style": "secondary" }]
-      }
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 9,
+        "minHeight": "half",
+        "align": "center",
+        "anchor": "top"
+      },
+      "styles": {
+        "base": {
+          "position": "relative",
+          "overflow": "hidden",
+          "backgroundImage": "/img/hero-bus.jpg",
+          "backgroundSize": "cover",
+          "backgroundPosition": "center"
+        }
+      },
+      "children": [
+        {
+          "id": "hero-scrim",
+          "type": "spacer",
+          "props": {
+            "size": 1
+          },
+          "styles": {
+            "base": {
+              "position": "absolute",
+              "inset": 0,
+              "background": "#1A1714@72%"
+            }
+          }
+        },
+        {
+          "id": "hero-row",
+          "type": "row",
+          "props": {
+            "gap": 6,
+            "align": "center",
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "hero-copy",
+              "type": "column",
+              "props": {
+                "span": 8,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "hero-h",
+                  "type": "heading",
+                  "props": {
+                    "eyebrow": "New & Used School Buses",
+                    "text": "Florida's Premier IC Bus Dealer",
+                    "headingLevel": 1
+                  }
+                },
+                {
+                  "id": "hero-lede",
+                  "type": "text",
+                  "props": {
+                    "text": "Sun State Bus Centers is the exclusive IC Bus sales, parts, and service dealer for the state of Florida. IC Bus school buses come with a range of power options to fit your fleet."
+                  }
+                },
+                {
+                  "id": "hero-search",
+                  "type": "widget",
+                  "props": {
+                    "widget": "inventory-search",
+                    "config": {
+                      "placeholder": "Search by stock #, model, or VIN"
+                    }
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "base": {
+              "position": "relative",
+              "zIndex": 1
+            }
+          }
+        }
+      ]
     },
     {
-      "id": "quick",
-      "type": "iconGrid",
+      "id": "quick-links",
+      "type": "section",
       "props": {
-        "heading": "How can we help?",
-        "items": [
+        "width": "boxed",
+        "paddingY": 6
+      },
+      "children": [
+        {
+          "id": "ql-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "ql-col",
+              "type": "column",
+              "props": {
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "hero-tiles",
+                  "type": "iconGrid",
+                  "props": {
+                    "heading": "",
+                    "items": [
+                      {
+                        "label": "New Buses",
+                        "desc": "Browse new IC Bus inventory",
+                        "url": "/store/inventory?condition=new"
+                      },
+                      {
+                        "label": "Used Buses",
+                        "desc": "Certified pre-owned buses",
+                        "url": "/store/inventory?condition=used"
+                      },
+                      {
+                        "label": "Schedule Service",
+                        "desc": "Certified maintenance & repair",
+                        "url": "/#service"
+                      },
+                      {
+                        "label": "Order Parts",
+                        "desc": "OEM parts, in stock",
+                        "url": "/#parts"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inventory",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 7,
+        "anchor": "inventory"
+      },
+      "children": [
+        {
+          "id": "inventory-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "inventory-col",
+              "type": "column",
+              "props": {
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "inventory-widget",
+                  "type": "widget",
+                  "props": {
+                    "widget": "inventory-carousel",
+                    "config": {
+                      "heading": "Featured Listings",
+                      "limit": 4
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "about",
+      "type": "statBand",
+      "props": {
+        "heading": "What We Offer",
+        "body": "Why Sun State: the people and capacity behind every bus we sell and service.",
+        "ctas": [
           {
-            "label": "In-stock inventory",
-            "desc": "New and used trucks and trailers, priced and ready to move.",
-            "url": "/store"
+            "ctaId": "about-us"
+          }
+        ],
+        "stats": [
+          {
+            "value": "180+",
+            "label": "Service Technicians"
           },
           {
-            "label": "Parts counter",
-            "desc": "OEM and aftermarket parts, shipped or ready at the counter.",
-            "url": "/store"
+            "value": "250+",
+            "label": "Service Bays"
           },
           {
-            "label": "Service & repair",
-            "desc": "Factory-trained technicians for inspections, warranty and repair.",
-            "url": "/contact"
+            "value": "50",
+            "label": "Parts Delivery Vehicles"
           },
           {
-            "label": "Financing",
-            "desc": "Flexible terms for owner-operators, with fast pre-approval.",
-            "url": "/contact"
+            "value": "12+",
+            "label": "Certified FDOE Bus Safety Inspectors"
+          },
+          {
+            "value": "AC",
+            "label": "Factory Trained AC Technicians"
           }
         ]
       }
     },
     {
-      "id": "featured",
-      "type": "widget",
+      "id": "service-parts",
+      "type": "section",
       "props": {
-        "widget": "inventory-carousel",
-        "config": { "heading": "Featured inventory", "limit": 4 }
-      }
+        "width": "boxed",
+        "paddingY": 7
+      },
+      "children": [
+        {
+          "id": "sp-row",
+          "type": "row",
+          "props": {
+            "gap": 6,
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "sp-service",
+              "type": "column",
+              "props": {
+                "span": 6
+              },
+              "children": [
+                {
+                  "id": "sp-service-img",
+                  "type": "image",
+                  "props": {
+                    "image": {
+                      "src": "/img/service-bus.jpg",
+                      "alt": "IC Bus school bus with its stop arm extended"
+                    }
+                  }
+                },
+                {
+                  "id": "sp-service-h",
+                  "type": "heading",
+                  "props": {
+                    "eyebrow": "Service Center",
+                    "text": "Certified Maintenance & Repair",
+                    "headingLevel": 2,
+                    "anchor": "service"
+                  }
+                },
+                {
+                  "id": "sp-service-t",
+                  "type": "text",
+                  "props": {
+                    "text": "Factory-trained technicians, genuine parts, and same-week appointments to keep your buses on the road longer."
+                  }
+                },
+                {
+                  "id": "sp-service-b",
+                  "type": "buttons",
+                  "props": {
+                    "items": [
+                      {
+                        "ctaId": "schedule-service"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sp-parts",
+              "type": "column",
+              "props": {
+                "span": 6
+              },
+              "children": [
+                {
+                  "id": "sp-parts-img",
+                  "type": "image",
+                  "props": {
+                    "image": {
+                      "src": "/img/parts-bus.jpg",
+                      "alt": "Fleet of school buses parked in a row"
+                    }
+                  }
+                },
+                {
+                  "id": "sp-parts-h",
+                  "type": "heading",
+                  "props": {
+                    "eyebrow": "Parts Department",
+                    "text": "OEM Parts, In Stock",
+                    "headingLevel": 2
+                  }
+                },
+                {
+                  "id": "sp-parts-t",
+                  "type": "text",
+                  "props": {
+                    "text": "Order online or call our parts desk. Most in-stock orders ship same day."
+                  }
+                },
+                {
+                  "id": "sp-parts-b",
+                  "type": "buttons",
+                  "props": {
+                    "items": [
+                      {
+                        "ctaId": "order-parts"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-      "id": "band",
-      "type": "statBand",
+      "id": "financing-banner",
+      "type": "section",
       "props": {
-        "heading": "Keeping your fleet on the road",
-        "body": "Every unit we sell is inspected in our own shop. When you buy from us you get a direct line to the people who worked on it.",
-        "ctas": [{ "ctaId": "about-us" }],
-        "stats": [
-          { "value": "39", "label": "Years in business" },
-          { "value": "12k+", "label": "Units delivered" },
-          { "value": "4", "label": "Sales & service centers" },
-          { "value": "48hr", "label": "Avg. parts turnaround" }
-        ]
-      }
+        "width": "boxed",
+        "background": "accent",
+        "paddingY": 6,
+        "anchor": "financing"
+      },
+      "children": [
+        {
+          "id": "fb-row",
+          "type": "row",
+          "props": {
+            "gap": 6,
+            "align": "center",
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "fb-copy",
+              "type": "column",
+              "props": {
+                "span": 8,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "fb-h",
+                  "type": "heading",
+                  "props": {
+                    "text": "Flexible Fleet Financing",
+                    "headingLevel": 2
+                  }
+                },
+                {
+                  "id": "fb-t",
+                  "type": "text",
+                  "props": {
+                    "text": "Competitive rates on new and used buses, tailored to districts, contractors and fleets alike."
+                  }
+                }
+              ]
+            },
+            {
+              "id": "fb-cta",
+              "type": "column",
+              "props": {
+                "span": 4,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "fb-b",
+                  "type": "buttons",
+                  "props": {
+                    "items": [
+                      {
+                        "ctaId": "get-prequalified"
+                      }
+                    ],
+                    "align": "left"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "testimonials",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 7
+      },
+      "children": [
+        {
+          "id": "t-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "t-col",
+              "type": "column",
+              "props": {
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "testimonials-block",
+                  "type": "testimonials",
+                  "props": {
+                    "heading": "What Fleet Owners Say",
+                    "items": [
+                      {
+                        "quote": "They kept three of our trucks down for less than 48 hours combined all year. That's the difference a good service team makes.",
+                        "name": "Marcus Webb",
+                        "role": "Fleet Manager, Webb Logistics"
+                      },
+                      {
+                        "quote": "Financing was straightforward and the team walked us through every option for our first Class 8 purchase.",
+                        "name": "Dana Ortiz",
+                        "role": "Owner-Operator"
+                      },
+                      {
+                        "quote": "Parts counter always has what we need in stock, or it ships next day. Huge for uptime.",
+                        "name": "Ray Callahan",
+                        "role": "Operations Lead, Callahan Freight"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "locations",
-      "type": "widget",
+      "type": "section",
       "props": {
-        "widget": "locations-map",
-        "config": { "heading": "Find a location", "showMap": true }
-      }
-    },
-    {
-      "id": "contact-row",
-      "type": "row",
-      "props": {
-        "align": "start",
-        "columns": [
-          [
+        "width": "boxed",
+        "background": "paper",
+        "paddingY": 7,
+        "anchor": "locations"
+      },
+      "children": [
+        {
+          "id": "loc-row",
+          "type": "row",
+          "props": {},
+          "children": [
             {
-              "id": "contact-copy",
-              "type": "heading",
-              "props": { "text": "Talk to someone who knows the equipment", "headingLevel": 2 }
-            },
-            {
-              "id": "contact-text",
-              "type": "text",
+              "id": "loc-col",
+              "type": "column",
               "props": {
-                "text": "Tell us what the job needs and we will spec it, price it and tell you honestly what is in stock.\n\nPrefer the phone? <a href=\"tel:+15551234567\">Call us</a> during business hours."
-              }
-            }
-          ],
-          [
-            {
-              "id": "contact-form",
-              "type": "form",
-              "props": { "formId": "request-info" }
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "loc-widget",
+                  "type": "widget",
+                  "props": {
+                    "widget": "locations-map",
+                    "config": {
+                      "heading": "Find a Location",
+                      "pagePathPrefix": "/locations"
+                    }
+                  }
+                }
+              ]
             }
           ]
-        ]
-      }
+        }
+      ]
+    },
+    {
+      "id": "blog",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 7
+      },
+      "children": [
+        {
+          "id": "blog-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "blog-col",
+              "type": "column",
+              "props": {
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "blog-posts",
+                  "type": "postsList",
+                  "props": {
+                    "heading": "From the Road Ahead",
+                    "count": 3,
+                    "showDates": false
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "contact",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 7,
+        "anchor": "contact"
+      },
+      "children": [
+        {
+          "id": "contact-row",
+          "type": "row",
+          "props": {
+            "gap": 6,
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "contact-form",
+              "type": "column",
+              "props": {
+                "span": 7
+              },
+              "children": [
+                {
+                  "id": "contact-h",
+                  "type": "heading",
+                  "props": {
+                    "eyebrow": "Get In Touch",
+                    "text": "Talk to Our Team",
+                    "headingLevel": 2
+                  }
+                },
+                {
+                  "id": "contact-t",
+                  "type": "text",
+                  "props": {
+                    "text": "Questions about inventory, service, or financing? Send a message and we'll respond within one business day."
+                  }
+                },
+                {
+                  "id": "contact-f",
+                  "type": "form",
+                  "props": {
+                    "formId": "request-info",
+                    "heading": "Send us a message",
+                    "headingLevel": 3
+                  }
+                }
+              ]
+            },
+            {
+              "id": "contact-subscribe",
+              "type": "column",
+              "props": {
+                "span": 5
+              },
+              "children": [
+                {
+                  "id": "sub-f",
+                  "type": "form",
+                  "props": {
+                    "formId": "fleet-updates",
+                    "heading": "Fleet Updates & Offers",
+                    "intro": "Subscribe for new inventory alerts and service specials.",
+                    "headingLevel": 3
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

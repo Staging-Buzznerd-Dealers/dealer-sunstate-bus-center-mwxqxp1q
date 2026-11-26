@@ -5,36 +5,164 @@
       "id": "main",
       "name": "Main menu",
       "items": [
-        { "id": "home", "label": "Home", "type": "page", "ref": "home" },
-        { "id": "inventory", "label": "Inventory", "type": "inventory", "ref": "inventory" },
         {
-          "id": "about",
-          "label": "About",
-          "type": "url",
-          "url": "/about",
+          "id": "inventory",
+          "label": "Inventory",
+          "type": "inventory",
+          "ref": "inventory",
           "children": [
-            { "id": "about-team", "label": "Our team", "type": "url", "url": "/about#team" },
-            { "id": "about-history", "label": "History", "type": "url", "url": "/about#history" }
+            {
+              "id": "inventory-all",
+              "label": "All Inventory",
+              "type": "inventory",
+              "ref": "inventory"
+            },
+            {
+              "id": "inventory-new",
+              "label": "New Buses",
+              "type": "inventory",
+              "ref": "inventory?condition=new"
+            },
+            {
+              "id": "inventory-used",
+              "label": "Used Buses",
+              "type": "inventory",
+              "ref": "inventory?condition=used"
+            }
           ]
         },
-        { "id": "contact", "label": "Contact", "type": "url", "url": "/contact" }
+        {
+          "id": "bus-types",
+          "label": "Bus Types",
+          "type": "inventory",
+          "ref": "inventory"
+        },
+        {
+          "id": "service",
+          "label": "Service",
+          "type": "url",
+          "url": "/#service"
+        },
+        {
+          "id": "parts",
+          "label": "Parts",
+          "type": "url",
+          "url": "/#parts"
+        },
+        {
+          "id": "financing",
+          "label": "Financing",
+          "type": "page",
+          "ref": "financing"
+        },
+        {
+          "id": "contact",
+          "label": "Contact",
+          "type": "url",
+          "url": "/#contact"
+        }
       ]
     },
     {
-      "id": "footer",
-      "name": "Footer menu",
+      "id": "utility",
+      "name": "Utility links",
       "items": [
-        { "id": "f-inventory", "label": "Inventory", "type": "inventory", "ref": "inventory" },
-        { "id": "f-about", "label": "About", "type": "url", "url": "/about" },
-        { "id": "f-contact", "label": "Contact", "type": "url", "url": "/contact" }
+        {
+          "id": "u-about",
+          "label": "About Us",
+          "type": "url",
+          "url": "/#about"
+        },
+        {
+          "id": "u-locations",
+          "label": "Locations",
+          "type": "url",
+          "url": "/#locations"
+        }
+      ]
+    },
+    {
+      "id": "footer-shop",
+      "name": "Footer: Shop",
+      "items": [
+        {
+          "id": "fs-new",
+          "label": "New Buses",
+          "type": "inventory",
+          "ref": "inventory?condition=new"
+        },
+        {
+          "id": "fs-used",
+          "label": "Used Buses",
+          "type": "inventory",
+          "ref": "inventory?condition=used"
+        },
+        {
+          "id": "fs-fin",
+          "label": "Financing",
+          "type": "page",
+          "ref": "financing"
+        }
+      ]
+    },
+    {
+      "id": "footer-support",
+      "name": "Footer: Support",
+      "items": [
+        {
+          "id": "fp-service",
+          "label": "Service",
+          "type": "url",
+          "url": "/#service"
+        },
+        {
+          "id": "fp-parts",
+          "label": "Parts",
+          "type": "url",
+          "url": "/#parts"
+        },
+        {
+          "id": "fp-contact",
+          "label": "Contact",
+          "type": "url",
+          "url": "/#contact"
+        }
+      ]
+    },
+    {
+      "id": "footer-company",
+      "name": "Footer: Company",
+      "items": [
+        {
+          "id": "fc-about",
+          "label": "About Us",
+          "type": "url",
+          "url": "/#about"
+        },
+        {
+          "id": "fc-locations",
+          "label": "Locations",
+          "type": "url",
+          "url": "/#locations"
+        }
       ]
     },
     {
       "id": "legal",
       "name": "Legal",
       "items": [
-        { "id": "privacy", "label": "Privacy", "type": "url", "url": "/privacy" },
-        { "id": "terms", "label": "Terms", "type": "url", "url": "/terms" }
+        {
+          "id": "privacy",
+          "label": "Privacy Policy",
+          "type": "url",
+          "url": "/privacy"
+        },
+        {
+          "id": "terms",
+          "label": "Terms",
+          "type": "url",
+          "url": "/terms"
+        }
       ]
     }
   ]

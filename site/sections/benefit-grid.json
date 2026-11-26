@@ -1,0 +1,93 @@
+{
+  "version": 2,
+  "id": "benefit-grid",
+  "name": "Numbered benefit cards",
+  "css": "[data-bz-node=\"bg-num\"] p{font-weight:700;letter-spacing:.1em;color:var(--accent-dark);margin:0}\n[data-bz-node=\"bg-title\"] h3{font-size:20px;line-height:1.25;text-transform:none;letter-spacing:0}\n[data-bz-node=\"bg-card\"]{border:1px solid var(--line);border-radius:var(--radius-card)}",
+  "props": [
+    {
+      "key": "heading",
+      "type": "text",
+      "label": "Heading",
+      "default": ""
+    },
+    {
+      "key": "items",
+      "type": "list",
+      "label": "Benefits",
+      "fields": [
+        {
+          "key": "num",
+          "type": "text",
+          "label": "Number"
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "label": "Title"
+        },
+        {
+          "key": "text",
+          "type": "textarea",
+          "label": "Copy"
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "id": "bg",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 4
+      },
+      "children": [
+        {
+          "id": "bg-row",
+          "type": "row",
+          "props": {
+            "gap": 5
+          },
+          "children": [
+            {
+              "id": "bg-card",
+              "type": "column",
+              "props": {
+                "span": 6,
+                "repeat": "items",
+                "padding": 5,
+                "background": "card"
+              },
+              "children": [
+                {
+                  "id": "bg-num",
+                  "type": "text",
+                  "props": {
+                    "text": "{{num}}",
+                    "width": "full"
+                  }
+                },
+                {
+                  "id": "bg-title",
+                  "type": "heading",
+                  "props": {
+                    "text": "{{title}}",
+                    "headingLevel": 3
+                  }
+                },
+                {
+                  "id": "bg-text",
+                  "type": "text",
+                  "props": {
+                    "text": "{{text}}",
+                    "width": "full"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

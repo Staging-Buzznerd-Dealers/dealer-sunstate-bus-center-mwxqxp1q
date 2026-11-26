@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Design tokens — SD International Design System (Syyo foundations)
+   Framework-agnostic. Load this first; nothing else depends on load order.
+   ========================================================================== */
+
+/* --- Typefaces -------------------------------------------------------- */
+@font-face{font-family:'INTL Headline';src:url('../assets/fonts/INTLHeadline-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Headline';src:url('../assets/fonts/INTLHeadline-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Headline';src:url('../assets/fonts/INTLHeadline-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Headline';src:url('../assets/fonts/INTLHeadline-Bold.woff2') format('woff2');font-weight:600 900;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Text';src:url('../assets/fonts/INTLText-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Text';src:url('../assets/fonts/INTLText-LightItalic.woff2') format('woff2');font-weight:300;font-style:italic;font-display:swap}
+@font-face{font-family:'INTL Text';src:url('../assets/fonts/INTLText-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Text';src:url('../assets/fonts/INTLText-RegularItalic.woff2') format('woff2');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:'INTL Text';src:url('../assets/fonts/INTLText-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Text';src:url('../assets/fonts/INTLText-Bold.woff2') format('woff2');font-weight:600 900;font-style:normal;font-display:swap}
+@font-face{font-family:'INTL Text';src:url('../assets/fonts/INTLText-BoldItalic.woff2') format('woff2');font-weight:600 900;font-style:italic;font-display:swap}
+
+:root{
+  /* --- Raw palette ---------------------------------------------------- */
+  --ink-900:#1A1714;   /* primary ink, dark sections */
+  --ink-800:#2A2620;
+  --ink-700:#3a342c;   /* long-form body copy */
+  --cream-100:#F2EEE6; /* text on dark chrome */
+  --white:#FFFFFF;
+  --tan-line:#E1DACB;
+  --tan-photo:#D9D2C4; /* empty photo tile */
+  --brown-muted:#6B6354;
+  --green-600:#157347;
+  --amber-600:#B45309;
+
+  /* Neutrals used on dark chrome */
+  --on-dark-1:#D8D2C4;
+  --on-dark-2:#B8B0A2;
+  --on-dark-3:#9C9484;
+  --on-dark-4:#8A8273;
+
+  /* --- Semantic colors (components consume these) --------------------- */
+  --color-ink:var(--ink-900);
+  --color-body:var(--ink-700);
+  --color-paper:var(--white);      /* page background */
+  --color-paper-alt:#FAF8F4;       /* banded section background */
+  --color-card:var(--white);
+  --color-line:var(--tan-line);
+  --color-muted:var(--brown-muted);
+  --color-success:var(--green-600);
+  --color-warning:var(--amber-600);
+
+  /* Accent — overridden per brand in themes.css.
+     --color-accent      : fill
+     --color-accent-on   : readable ink laid ON the accent fill
+     --color-accent-text : accent used AS text/links on white
+     --color-accent-soft : brighter accent, selection + highlights */
+  --color-accent:#E8531F;
+  --color-accent-on:var(--ink-900);
+  --color-accent-text:#A23A16;
+  --color-accent-soft:#FF7144;
+
+  /* --- Type ----------------------------------------------------------- */
+  --font-display:'INTL Headline', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-body:'INTL Text', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-label:'INTL Text', ui-monospace, monospace; /* tracked-out micro labels */
+
+  --text-hero:52px;
+  --text-h1:42px;
+  --text-h2:36px;
+  --text-h3:28px;
+  --text-h4:20px;
+  --text-lead:18px;
+  --text-base:15px;
+  --text-sm:14px;
+  --text-xs:13px;
+  --text-2xs:12px;
+  --text-micro:11px;
+
+  --leading-tight:1.05;
+  --leading-snug:1.3;
+  --leading-normal:1.5;
+  --leading-relaxed:1.7;
+  --tracking-label:.12em;
+
+  /* --- Space ---------------------------------------------------------- */
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:20px;
+  --space-6:24px;
+  --space-7:32px;
+  --space-8:40px;
+  --space-9:56px;
+  --space-10:64px;
+  --space-11:80px;
+  --space-12:96px;
+
+  --gutter:24px;            /* page edge padding */
+  --measure:1440px;         /* standard content width */
+  --measure-narrow:1000px;  /* long-form reading width */
+
+  /* --- Radius --------------------------------------------------------- */
+  --radius-sm:7px;   /* chips, tags, small controls */
+  --radius-md:10px;  /* inputs, buttons */
+  --radius-lg:14px;  /* content cards */
+  --radius-xl:16px;  /* hero surfaces, media */
+  --radius-pill:999px;
+
+  /* --- Elevation — floating chrome only, never resting cards ---------- */
+  --shadow-dropdown:0 12px 28px rgba(0,0,0,.18);
+  --shadow-float:0 10px 26px rgba(0,0,0,.22);
+  --shadow-raise:0 16px 40px rgba(0,0,0,.1);
+  --shadow-card-lift:0 28px 60px rgba(0,0,0,.22);
+  --shadow-fab:0 8px 20px rgba(0,0,0,.2);
+
+  /* --- Motion --------------------------------------------------------- */
+  --ease:cubic-bezier(.2,.6,.2,1);
+  --dur-fast:150ms;
+  --dur-base:250ms;
+  --dur-slow:350ms;
+
+  /* --- Layering ------------------------------------------------------- */
+  --z-header:20;
+  --z-dropdown:30;
+  --z-fab:60;
+  --z-skip:300;
+}

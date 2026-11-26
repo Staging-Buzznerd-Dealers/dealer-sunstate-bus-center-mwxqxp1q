@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "headStart": "",
+  "headEnd": "",
+  "bodyStart": "",
+  "beforeFooter": "",
+  "bodyEnd": "",
+  "js": "",
+  "css": "/* Sun State yellow is a fill colour: on light surfaces, eyebrows and text links use the darker accent so they pass AA. */\n.bz-section:not(.bz-section--bg-ink):not(.bz-section--bg-accent) .bz-eyebrow{color:var(--accent-dark)}\n.bz-section--bg-ink .bz-eyebrow,.bz-col--bg-ink .bz-eyebrow{color:var(--accent)}\n.bz-section:not(.bz-section--bg-ink) .bz-btn--link{color:var(--accent-dark)}\n.bz-block h1,.bz-block h2{text-transform:uppercase;letter-spacing:.01em}\n.bz-post img{width:100%;aspect-ratio:3/2;object-fit:cover}\n.bz-col--bg-card{color:var(--ink)}"
+}

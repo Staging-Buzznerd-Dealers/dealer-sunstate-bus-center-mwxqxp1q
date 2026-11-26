@@ -1,0 +1,36 @@
+/* ==========================================================================
+   Themes — one class on <body> re-skins the whole site.
+   A theme sets ONLY accent variables. Ink, paper, line, type and spacing are
+   shared across every brand; do not fork them per theme.
+   ========================================================================== */
+
+/* Ironhaul Truck Centers — orange on ink */
+.theme-ironhaul{
+  --color-accent:#E8531F;
+  --color-accent-on:var(--ink-900);
+  --color-accent-text:#A23A16;
+  --color-accent-soft:#FF7144;
+}
+
+/* Sun State Bus Centers — school-bus yellow on ink */
+.theme-sunstate{
+  --color-accent:#F7C600;
+  --color-accent-on:var(--ink-900);
+  --color-accent-text:#8A6D00;
+  --color-accent-soft:#FFD84D;
+}
+
+/* Kenworth of Pennsylvania — red; note accent-on flips to white */
+.theme-kenworth{
+  --color-accent:#E31C3D;
+  --color-accent-on:#FFFFFF;
+  --color-accent-text:#B01330;
+  --color-accent-soft:#FF3352;
+}
+
+/* Brand dot colors used by the location filter legend */
+.brand-dot--international{--dot:#E8531F}
+.brand-dot--isuzu{--dot:#C62828}
+.brand-dot--ford{--dot:#3B5FA0}
+.brand-dot--autocar{--dot:#1C3F66}
+.brand-dot--default{--dot:var(--color-muted)}
