@@ -1,0 +1,423 @@
+{
+  "version": 2,
+  "nodes": [
+    {
+      "id": "banner",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 9,
+        "align": "center"
+      },
+      "styles": {
+        "base": {
+          "position": "relative",
+          "overflow": "hidden",
+          "backgroundImage": "/img/hero-bus.jpg",
+          "backgroundSize": "cover",
+          "backgroundPosition": "center"
+        }
+      },
+      "children": [
+        {
+          "id": "banner-scrim",
+          "type": "spacer",
+          "props": {
+            "size": 1
+          },
+          "styles": {
+            "base": {
+              "position": "absolute",
+              "inset": 0,
+              "background": "#1A1714@72%"
+            }
+          }
+        },
+        {
+          "id": "banner-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "banner-col",
+              "type": "column",
+              "props": {
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "banner-h",
+                  "type": "heading",
+                  "props": {
+                    "eyebrow": "Financing & Warranty",
+                    "text": "Finance Department",
+                    "headingLevel": 1
+                  }
+                }
+              ]
+            }
+          ],
+          "styles": {
+            "base": {
+              "position": "relative",
+              "zIndex": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "intro",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 6
+      },
+      "children": [
+        {
+          "id": "intro-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "intro-col",
+              "type": "column",
+              "props": {
+                "span": 10
+              },
+              "children": [
+                {
+                  "id": "intro-t",
+                  "type": "text",
+                  "props": {
+                    "text": "If you're considering financing your new IC Bus, you're in good hands with our finance department. We offer services in and around the Tampa area. Let us help you set up a financing plan that gets you the bus you need at a payment that fits your budget."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "warranty",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 4
+      },
+      "children": [
+        {
+          "id": "warranty-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "warranty-col",
+              "type": "column",
+              "props": {
+                "span": 10
+              },
+              "children": [
+                {
+                  "id": "warranty-h",
+                  "type": "heading",
+                  "props": {
+                    "eyebrow": "Warranty Information",
+                    "text": "Sun State Bus Centers Warranty Information",
+                    "headingLevel": 2
+                  }
+                },
+                {
+                  "id": "warranty-t",
+                  "type": "text",
+                  "props": {
+                    "text": "Sun State Bus Centers has teamed up with the industry leaders for bus warranty protection plans, Bus Master Warranty. This partnership allows us to extend your manufacturer's warranty for new buses and protect used buses too. Some of the more sought after benefits of a bus protection plan include:"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "benefits",
+      "type": "sharedSection",
+      "props": {
+        "sectionId": "benefit-grid",
+        "values": {
+          "heading": "",
+          "items": [
+            {
+              "num": "01",
+              "title": "Protection From The Unexpected",
+              "text": "Repair costs can wreak havoc on a bus owner’s bank account. We offer “plan ahead” protection to prevent unforeseen financial despair that is inherent with breakdowns."
+            },
+            {
+              "num": "02",
+              "title": "New Buses Qualify",
+              "text": "New bus plans protect any bus with at least 6 months of the original manufacturer’s warranty remaining on them for an ADDITIONAL 3 to 5 years."
+            },
+            {
+              "num": "03",
+              "title": "Most Used Buses Qualify",
+              "text": "If your bus is less than 8 years old then it qualifies for 1 to 3 years of warranty coverage."
+            },
+            {
+              "num": "04",
+              "title": "Long-Term Protection",
+              "text": "Customers are keeping their units on the road longer these days, which is why we offer industry leading, long-term protection plans for new and used commercial and school buses."
+            },
+            {
+              "num": "05",
+              "title": "Superior Customer Service Through-and-Through",
+              "text": "World-class, white glove customer service throughout the entire process. Every time you call you get a knowledgeable representative on the phone to help answer any questions you might have."
+            },
+            {
+              "num": "06",
+              "title": "Future Proof Your Finances",
+              "text": "The price to protect yourself today for 10 years hedges against inflation and saves you money in the long run. Pay today’s rates for the life of your contract on all covered repairs."
+            },
+            {
+              "num": "07",
+              "title": "Extensive Coverage",
+              "text": "We offer the most extensive warranty coverage on the market, with more covered parts, more features, higher limits-of-liability, and peace of mind standard with every plan."
+            },
+            {
+              "num": "08",
+              "title": "Even More Benefits",
+              "text": "Every bus protection plan comes standard with towing and roadside assistance. All of our plans are transferable, giving the added benefit of increased resale value should you decide to sell your bus."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "warranty-contact",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 3
+      },
+      "children": [
+        {
+          "id": "wc-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "wc-col",
+              "type": "column",
+              "props": {
+                "span": 10
+              },
+              "children": [
+                {
+                  "id": "wc-t",
+                  "type": "text",
+                  "props": {
+                    "text": "If you are interested in learning which coverage is right for your specific needs, please contact Lynn DeJesus at (813) 760-8552."
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "warranty-ctas",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 7
+      },
+      "children": [
+        {
+          "id": "wcta-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "wcta-col",
+              "type": "column",
+              "props": {
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "wcta-grid",
+                  "type": "serviceGrid",
+                  "props": {
+                    "heading": "Protected by Bus Master Warranty",
+                    "items": [
+                      {
+                        "label": "Benefits of a Bus Warranty",
+                        "desc": "See why a bus protection plan pays for itself the first time you need it.",
+                        "cta": {
+                          "label": "Learn more",
+                          "url": "/financing#benefits",
+                          "intent": "learn-more"
+                        }
+                      },
+                      {
+                        "label": "Bus Warranty Plans",
+                        "desc": "Compare coverage terms and pricing for new and used buses side by side.",
+                        "cta": {
+                          "label": "Learn more",
+                          "url": "/financing#benefits",
+                          "intent": "learn-more"
+                        }
+                      },
+                      {
+                        "label": "International Financial",
+                        "desc": "Explore financing built for fleet and owner-operator budgets.",
+                        "cta": {
+                          "label": "Learn more",
+                          "url": "/financing#apply",
+                          "intent": "learn-more"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "partnership",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 7
+      },
+      "children": [
+        {
+          "id": "pp-row",
+          "type": "row",
+          "props": {},
+          "children": [
+            {
+              "id": "pp-card",
+              "type": "column",
+              "props": {
+                "span": 12,
+                "background": "ink",
+                "padding": 6
+              },
+              "children": [
+                {
+                  "id": "pp-h",
+                  "type": "heading",
+                  "props": {
+                    "eyebrow": "Bus Master Warranty Partnership",
+                    "text": "We're proud to partner with Bus Master Warranty",
+                    "headingLevel": 2
+                  }
+                },
+                {
+                  "id": "pp-t",
+                  "type": "text",
+                  "props": {
+                    "text": "Sun State Bus Centers has teamed up with the industry-leading bus warranty company Bus Master Warranty to offer our valued customers the best extended protection plans available."
+                  }
+                },
+                {
+                  "id": "pp-list",
+                  "type": "text",
+                  "props": {
+                    "text": "✓ Affordable New & Used Plans<br>✓ Towing is INCLUDED<br>✓ 24-7 On-Call Claims Department<br>✓ Interest-Free Financing Available",
+                    "width": "full"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "apply",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "paddingY": 7,
+        "anchor": "apply"
+      },
+      "children": [
+        {
+          "id": "apply-row",
+          "type": "row",
+          "props": {
+            "gap": 6,
+            "align": "center",
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "apply-img",
+              "type": "column",
+              "props": {
+                "span": 6
+              },
+              "children": [
+                {
+                  "id": "apply-image",
+                  "type": "image",
+                  "props": {
+                    "image": {
+                      "src": "/img/inventory-ce-series.jpg",
+                      "alt": "IC Bus CE Series school bus"
+                    }
+                  }
+                }
+              ]
+            },
+            {
+              "id": "apply-copy",
+              "type": "column",
+              "props": {
+                "span": 6,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "apply-h",
+                  "type": "heading",
+                  "props": {
+                    "text": "Apply Today",
+                    "headingLevel": 2
+                  }
+                },
+                {
+                  "id": "apply-t",
+                  "type": "text",
+                  "props": {
+                    "text": "Talk to Lynn DeJesus about financing your IC Bus with credit at (800) 741-7566 or (813) 621-1331 ext. 1008, and get out on the road today. Our knowledgeable finance staff is here to make the process of purchasing your bus easy, so there is no reason to put it off. To get a quote, apply now and our staff will contact you about your available financing options."
+                  }
+                },
+                {
+                  "id": "apply-b",
+                  "type": "buttons",
+                  "props": {
+                    "items": [
+                      {
+                        "ctaId": "apply-now"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

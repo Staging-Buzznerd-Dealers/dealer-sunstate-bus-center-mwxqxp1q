@@ -1,0 +1,36 @@
+{
+  "id": "fleet-updates",
+  "name": "Fleet updates & offers",
+  "status": "live",
+  "surfaces": [
+    "page",
+    "blog"
+  ],
+  "intent": "subscribe",
+  "submitLabel": "Subscribe",
+  "successMessage": "You're subscribed!",
+  "consent": {
+    "enabled": true,
+    "required": true,
+    "text": "I agree to receive inventory alerts and service specials by email."
+  },
+  "fields": [
+    {
+      "id": "fu-email",
+      "type": "email",
+      "label": "Email address",
+      "required": true
+    }
+  ],
+  "notifications": [
+    {
+      "id": "fu-marketing",
+      "name": "New subscriber",
+      "logic": "AND",
+      "rules": [],
+      "targetType": "role",
+      "roleId": "marketing-manager",
+      "scopeMode": "dynamic"
+    }
+  ]
+}

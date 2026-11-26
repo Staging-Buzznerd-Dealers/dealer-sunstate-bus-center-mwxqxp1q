@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Design System &amp; Component Library | Dealer Site Handoff</title>
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/components.css">
+<link rel="stylesheet" href="../css/themes.css">
+<style>
+  /* Documentation chrome only — not part of the site's component CSS. */
+  .doc-head{background:var(--color-ink);color:var(--cream-100);padding:56px 24px}
+  .doc-nav{display:flex;flex-wrap:wrap;gap:16px;margin-top:24px;font-size:13px}
+  .doc-nav a{color:var(--on-dark-1);border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:2px}
+  .doc-nav a:hover{color:var(--white)}
+  .doc-section{padding:64px 24px;border-bottom:1px solid var(--color-line)}
+  .doc-section__inner{max-width:1100px;margin-inline:auto}
+  .doc-kicker{font:700 11px/1 var(--font-label);letter-spacing:.14em;text-transform:uppercase;color:var(--color-muted);margin-bottom:12px}
+  .doc-note{font-size:14px;line-height:1.65;color:var(--color-muted);max-width:70ch;margin-top:12px}
+  .doc-grid{display:grid;gap:16px;margin-top:28px}
+  .doc-grid--4{grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+  .doc-grid--3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+  .doc-grid--2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+  .swatch{border:1px solid var(--color-line);border-radius:var(--radius-md);overflow:hidden}
+  .swatch__chip{height:76px}
+  .swatch__meta{padding:10px 12px;font-size:12px;line-height:1.5}
+  .swatch__name{font-weight:700}
+  .swatch__var{font-family:var(--font-label);color:var(--color-muted);word-break:break-all}
+  .spec{border:1px solid var(--color-line);border-radius:var(--radius-md);padding:16px 18px}
+  .spec__label{font-family:var(--font-label);font-size:12px;color:var(--color-muted);margin-top:6px}
+  .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:28px}
+  code{font-family:var(--font-label);font-size:12.5px;background:var(--color-paper-alt);border:1px solid var(--color-line);border-radius:4px;padding:1px 5px}
+  pre{margin:16px 0 0;padding:16px;background:var(--color-ink);color:#EDE9E0;border-radius:var(--radius-md);overflow-x:auto;font-family:var(--font-label);font-size:12.5px;line-height:1.6}
+  table{width:100%;border-collapse:collapse;margin-top:24px;font-size:13.5px}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--color-line);vertical-align:top}
+  th{font-family:var(--font-label);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--color-muted)}
+  .theme-strip{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .theme-strip > div{flex:1 1 220px;border:1px solid var(--color-line);border-radius:var(--radius-md);padding:18px}
+  .stage{background:var(--color-paper-alt);border:1px solid var(--color-line);border-radius:var(--radius-lg);padding:28px;margin-top:28px}
+  .stage--ink{background:var(--color-ink);border-color:transparent}
+</style>
+</head>
+<body>
+
+<header class="doc-head">
+  <div class="doc-section__inner">
+    <div class="doc-kicker" style="color:var(--on-dark-2)">Design system</div>
+    <h1 class="title-lg" style="color:var(--white);font-size:38px">Foundations &amp; component library</h1>
+    <p style="max-width:70ch;margin-top:14px;color:var(--on-dark-1);font-size:15px;line-height:1.7">Everything the dealer site is built from. Three CSS files carry the whole system: <code style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff">tokens.css</code> holds the variables, <code style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff">components.css</code> holds the BEM blocks below, and <code style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff">themes.css</code> re-skins the whole site from a single class on <code style="background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.2);color:#fff">&lt;body&gt;</code>.</p>
+    <nav class="doc-nav">
+      <a href="#color">Color</a>
+      <a href="#themes">Themes</a>
+      <a href="#type">Type</a>
+      <a href="#space">Space &amp; radius</a>
+      <a href="#buttons">Buttons</a>
+      <a href="#chips">Chips, tags, badges</a>
+      <a href="#forms">Forms</a>
+      <a href="#cards">Cards</a>
+      <a href="#nav">Navigation</a>
+      <a href="#behavior">Behavior hooks</a>
+    </nav>
+  </div>
+</header>
+
+<!-- =============================================================== COLOR -->
+<section class="doc-section" id="color">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Foundations</div>
+    <h2 class="title-md">Color</h2>
+    <p class="doc-note">Warm and restrained. One accent family per brand; green and amber are reserved for verified and pending states and are never decorative. Do not introduce new hues — extend by adjusting the accent variables in a theme.</p>
+
+    <div class="doc-grid doc-grid--4">
+      <div class="swatch"><div class="swatch__chip" style="background:#1A1714"></div><div class="swatch__meta"><div class="swatch__name">Ink 900</div><div class="swatch__var">--color-ink · #1A1714</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#3a342c"></div><div class="swatch__meta"><div class="swatch__name">Body text</div><div class="swatch__var">--color-body · #3a342c</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#FFFFFF;border-bottom:1px solid var(--color-line)"></div><div class="swatch__meta"><div class="swatch__name">Paper / card</div><div class="swatch__var">--color-paper · #FFFFFF</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#FAF8F4"></div><div class="swatch__meta"><div class="swatch__name">Paper alt</div><div class="swatch__var">--color-paper-alt · #FAF8F4</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#F2EEE6"></div><div class="swatch__meta"><div class="swatch__name">Cream</div><div class="swatch__var">--cream-100 · #F2EEE6<br>text on ink chrome</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#E1DACB"></div><div class="swatch__meta"><div class="swatch__name">Tan line</div><div class="swatch__var">--color-line · #E1DACB</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#D9D2C4"></div><div class="swatch__meta"><div class="swatch__name">Photo tile</div><div class="swatch__var">--tan-photo · #D9D2C4</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#6B6354"></div><div class="swatch__meta"><div class="swatch__name">Muted</div><div class="swatch__var">--color-muted · #6B6354</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#157347"></div><div class="swatch__meta"><div class="swatch__name">Success</div><div class="swatch__var">--color-success · #157347</div></div></div>
+      <div class="swatch"><div class="swatch__chip" style="background:#B45309"></div><div class="swatch__meta"><div class="swatch__name">Warning</div><div class="swatch__var">--color-warning · #B45309</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================== THEMES -->
+<section class="doc-section" id="themes">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Foundations</div>
+    <h2 class="title-md">Themes</h2>
+    <p class="doc-note">A theme sets four variables and nothing else. <code>--color-accent-on</code> is the ink laid on top of the accent fill; it flips to white for Kenworth's red so button labels stay legible. Add a brand by copying one of these blocks.</p>
+
+    <div class="theme-strip">
+      <div class="theme-ironhaul">
+        <div class="badge">Ironhaul</div>
+        <div class="row" style="margin-top:16px">
+          <a class="btn btn--primary" href="#buttons">Primary</a>
+          <a class="btn btn--ghost" href="#buttons">Ghost link</a>
+        </div>
+        <p class="doc-note" style="margin-top:14px"><code>.theme-ironhaul</code><br>accent #E8531F · text #A23A16</p>
+      </div>
+      <div class="theme-sunstate">
+        <div class="badge">Sun State</div>
+        <div class="row" style="margin-top:16px">
+          <a class="btn btn--primary" href="#buttons">Primary</a>
+          <a class="btn btn--ghost" href="#buttons">Ghost link</a>
+        </div>
+        <p class="doc-note" style="margin-top:14px"><code>.theme-sunstate</code><br>accent #F7C600 · text #8A6D00</p>
+      </div>
+      <div class="theme-kenworth">
+        <div class="badge">Kenworth of PA</div>
+        <div class="row" style="margin-top:16px">
+          <a class="btn btn--primary" href="#buttons">Primary</a>
+          <a class="btn btn--ghost" href="#buttons">Ghost link</a>
+        </div>
+        <p class="doc-note" style="margin-top:14px"><code>.theme-kenworth</code><br>accent #E31C3D · text #B01330 · on-accent white</p>
+      </div>
+    </div>
+
+<pre>&lt;body class="theme-sunstate"&gt;
+
+.theme-sunstate{
+  --color-accent:#F7C600;      /* fills   */
+  --color-accent-on:#1A1714;   /* ink ON the fill */
+  --color-accent-text:#8A6D00; /* accent AS text on white */
+  --color-accent-soft:#FFD84D; /* selection, highlights */
+}</pre>
+  </div>
+</section>
+
+<!-- ================================================================ TYPE -->
+<section class="doc-section" id="type">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Foundations</div>
+    <h2 class="title-md">Type</h2>
+    <p class="doc-note">Two families. <strong>INTL Headline</strong> for titles, prices, and primary button labels — always 700 or heavier. <strong>INTL Text</strong> for body copy and UI, and the same family stands in as the tracked-out "mono" label face. Fonts ship as woff2 in <code>assets/fonts/</code> and are declared in <code>tokens.css</code>.</p>
+
+    <div style="margin-top:28px;display:flex;flex-direction:column;gap:18px">
+      <div><div class="title-xl">Built for the Job</div><div class="spec__label">.hero__title / .title-xl — 52px · display 700 · 1.05</div></div>
+      <div><div class="title-lg">Featured Listings</div><div class="spec__label">.title-lg — 36px · display 700</div></div>
+      <div><div class="title-md">Certified Maintenance</div><div class="spec__label">.title-md — 28px · display 700</div></div>
+      <div><div class="title-sm">Fleet Updates &amp; Offers</div><div class="spec__label">.title-sm — 20px · display 700</div></div>
+      <div><div class="eyebrow">Service Center</div><div class="spec__label">.eyebrow — 12px · body 700 · .12em · uppercase · accent-text</div></div>
+      <div><p class="lede" style="max-width:60ch">Shop medium and heavy-duty trucks, schedule certified service, and keep your fleet moving.</p><div class="spec__label">.lede — 18px · 1.5</div></div>
+      <div><p class="prose" style="max-width:70ch">Factory-trained technicians, genuine parts, and same-week appointments to keep your trucks on the road longer.</p><div class="spec__label">.prose — 16px · 1.7 · body-text color</div></div>
+      <div><div style="font:400 12px/1.4 var(--font-label);color:var(--color-muted)">&#9678; Tampa, FL</div><div class="spec__label">--font-label — meta and micro labels</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================================================= SPACE, RADIUS -->
+<section class="doc-section" id="space">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Foundations</div>
+    <h2 class="title-md">Space, radius, elevation</h2>
+    <p class="doc-note">Sections run on a 96px vertical rhythm (64px on dark CTA bands, 80px on banded sections), dropping to 64px below 640px. Radius scales with surface importance. Shadow is for floating chrome only — resting cards separate with the 1px tan border instead.</p>
+
+    <table>
+      <thead><tr><th>Token</th><th>Value</th><th>Used for</th></tr></thead>
+      <tbody>
+        <tr><td><code>--gutter</code></td><td>24px (16px &lt;640px)</td><td>Page edge padding</td></tr>
+        <tr><td><code>--measure</code></td><td>1440px</td><td>Standard content width</td></tr>
+        <tr><td><code>--measure-narrow</code></td><td>1000px</td><td>Long-form reading width (financing page)</td></tr>
+        <tr><td><code>--radius-sm</code></td><td>7px</td><td>Chips, tags, small controls</td></tr>
+        <tr><td><code>--radius-md</code></td><td>10px</td><td>Buttons, inputs, dropdown items</td></tr>
+        <tr><td><code>--radius-lg</code></td><td>14px</td><td>Content cards, dropdown panels</td></tr>
+        <tr><td><code>--radius-xl</code></td><td>16px</td><td>Hero surfaces, feature media</td></tr>
+        <tr><td><code>--radius-pill</code></td><td>999px</td><td>Avatars, dots, back-to-top, save button</td></tr>
+        <tr><td><code>--shadow-dropdown</code></td><td>0 12px 28px rgba(0,0,0,.18)</td><td>Open nav menus</td></tr>
+        <tr><td><code>--shadow-float</code></td><td>0 10px 26px rgba(0,0,0,.22)</td><td>Hero action tiles</td></tr>
+        <tr><td><code>--shadow-raise</code></td><td>0 16px 40px rgba(0,0,0,.1)</td><td>Quick-links card overlapping the hero</td></tr>
+        <tr><td><code>--shadow-card-lift</code></td><td>0 28px 60px rgba(0,0,0,.22)</td><td>Active coverflow card</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============================================================= BUTTONS -->
+<section class="doc-section" id="buttons">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Components</div>
+    <h2 class="title-md">Button</h2>
+    <p class="doc-note">One block, five looks, four sizes. <code>.btn--primary</code> and <code>.btn--dark</code> use the display face at 700; the rest use the body face at 600. Anchors and buttons share the class — pick the element by whether it navigates or acts.</p>
+
+    <div class="row">
+      <button class="btn btn--primary" type="button">Primary</button>
+      <button class="btn btn--dark" type="button">Dark</button>
+      <button class="btn btn--secondary" type="button">Secondary</button>
+      <button class="btn btn--ghost" type="button">Ghost link</button>
+      <button class="btn btn--outline-accent" type="button">Needs verification</button>
+    </div>
+    <div class="row">
+      <button class="btn btn--primary btn--sm" type="button">Small 38px</button>
+      <button class="btn btn--primary" type="button">Medium 46px</button>
+      <button class="btn btn--primary btn--lg" type="button">Large 50px</button>
+      <button class="btn btn--primary btn--xl" type="button">Extra 58px</button>
+      <button class="btn btn--primary" type="button" aria-disabled="true">Disabled</button>
+    </div>
+    <div class="row">
+      <button class="icon-btn" type="button" aria-label="Previous">&#8249;</button>
+      <button class="icon-btn" type="button" aria-label="Next">&#8250;</button>
+      <button class="icon-btn icon-btn--sm" type="button" aria-label="Previous">&#8249;</button>
+      <span class="spec__label">.icon-btn — 44px, 40px</span>
+    </div>
+
+<pre>&lt;a class="btn btn--primary btn--block" href="#"&gt;Check availability&lt;/a&gt;
+&lt;button class="btn btn--secondary btn--sm" type="button"&gt;Compare&lt;/button&gt;</pre>
+  </div>
+</section>
+
+<!-- =============================================== CHIPS, TAGS, BADGES -->
+<section class="doc-section" id="chips">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Components</div>
+    <h2 class="title-md">Chips, tags, badges</h2>
+    <p class="doc-note">Chips are interactive filters and carry state in <code>aria-pressed</code>; the filter script sets <code>aria-disabled="true"</code> on any option that would return zero results, so the styling follows the ARIA rather than a separate class. Tags are static labels. The badge is the accent eyebrow above hero headlines.</p>
+
+    <div class="row">
+      <button class="chip" type="button" aria-pressed="true">All</button>
+      <button class="chip" type="button" aria-pressed="false">Sales</button>
+      <button class="chip" type="button" aria-pressed="false">Parts</button>
+      <button class="chip" type="button" aria-pressed="false" aria-disabled="true">Rent (0 results)</button>
+    </div>
+    <div class="row">
+      <span class="tag">Sales</span>
+      <span class="tag">Parts</span>
+      <span class="tag">Service</span>
+      <span class="tag">Sleeper Cab</span>
+    </div>
+    <div class="row">
+      <span class="badge">New &amp; Used Commercial Trucks</span>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== FORMS -->
+<section class="doc-section" id="forms">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Components</div>
+    <h2 class="title-md">Forms</h2>
+    <p class="doc-note">46px minimum control height, 1.5px tan border, 10px radius. Every field needs a label or an <code>aria-label</code>; placeholders are examples, never labels. Focus draws a 2px ink outline inset by 1px.</p>
+
+    <div class="stage">
+      <form class="form" data-demo-form data-success="Thanks — we'll be in touch shortly.">
+        <input class="input" type="text" placeholder="Full name" aria-label="Full name" required>
+        <input class="input" type="email" placeholder="Email address" aria-label="Email address" required>
+        <textarea class="textarea" rows="3" placeholder="How can we help?" aria-label="How can we help?" required></textarea>
+        <button class="btn btn--primary btn--lg" type="submit">Send Message</button>
+        <p class="form__status" data-form-status role="status" hidden></p>
+      </form>
+    </div>
+
+    <div class="stage">
+      <div class="search-inline">
+        <input class="search-inline__input" type="search" placeholder="Search by stock #, model, or VIN" aria-label="Search inventory">
+        <button class="search-inline__button" type="button">Search</button>
+      </div>
+      <div class="spec__label" style="margin-top:10px">.search-inline — hero search, input and button fused into one surface</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================================== CARDS -->
+<section class="doc-section" id="cards">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Components</div>
+    <h2 class="title-md">Cards</h2>
+    <p class="doc-note">Four card blocks carry almost every page: the listing card (inventory), the location card (a horizontally snapping rail), the stat card (dark bands), and the blog card. All sit on white with a 1px tan border and no resting shadow.</p>
+
+    <div class="stage">
+      <div class="listing-grid" style="max-width:560px">
+        <article class="listing-card">
+          <div class="listing-card__media">
+            <img src="../assets/inventory-ce-series.jpg" alt="2024 IC Bus CE Series">
+            <button class="listing-card__save" type="button" data-save aria-label="Save">&#9825;</button>
+            <span class="listing-card__counter">PHOTO 1 / 4</span>
+            <div class="listing-card__dots" aria-hidden="true">
+              <span class="listing-card__dot listing-card__dot--on"></span><span class="listing-card__dot"></span><span class="listing-card__dot"></span><span class="listing-card__dot"></span>
+            </div>
+          </div>
+          <div class="listing-card__body">
+            <h3 class="listing-card__title">2024 IC Bus CE Series</h3>
+            <div class="listing-card__meta">&#9678; Tampa, FL</div>
+            <div class="listing-card__specs">
+              <span class="listing-card__spec">2024 <span>Year</span></span>
+              <span class="listing-card__spec">3,400 mi <span>Mileage</span></span>
+            </div>
+            <div class="listing-card__price">$132,500</div>
+            <div class="listing-card__payment">Est. $2,412/mo</div>
+            <a class="btn btn--primary btn--block listing-card__cta" href="#">Check availability</a>
+          </div>
+        </article>
+
+        <article class="listing-card">
+          <div class="listing-card__media">
+            <div class="listing-card__placeholder" aria-hidden="true">TRUCK</div>
+            <button class="listing-card__save" type="button" data-save aria-label="Save">&#9825;</button>
+            <span class="listing-card__counter">PHOTO 1 / 3</span>
+          </div>
+          <div class="listing-card__body">
+            <h3 class="listing-card__title">Empty photo state</h3>
+            <div class="listing-card__meta">&#9678; Dallas, TX</div>
+            <div class="listing-card__specs">
+              <span class="listing-card__spec">2021 <span>Year</span></span>
+              <span class="listing-card__spec">393 hp <span>Horsepower</span></span>
+            </div>
+            <div class="listing-card__price">$28,925</div>
+            <div class="listing-card__payment">Est. $527/mo</div>
+            <a class="btn btn--primary btn--block listing-card__cta" href="#">Check availability</a>
+          </div>
+        </article>
+      </div>
+      <div class="spec__label" style="margin-top:14px">.listing-card — 4/3 media (16/9 below 640px). With no photo, <code>.listing-card__placeholder</code> shows the category letter-spaced at 16% ink.</div>
+    </div>
+
+    <div class="stage">
+      <div class="location-rail">
+        <div class="location-card">
+          <div class="location-card__brands" aria-hidden="true">
+            <span class="location-card__brand-dot brand-dot--international"></span>
+            <span class="location-card__brand-dot brand-dot--ford"></span>
+          </div>
+          <div class="location-card__head">
+            <h3 class="location-card__title"><span class="location-card__num">01</span>Sun State International</h3>
+            <span class="location-card__state">FL</span>
+          </div>
+          <div class="location-card__address">6020 Adamo Dr., Tampa, FL 33619</div>
+          <div class="location-card__phone">(813) 519-0125</div>
+          <a class="location-card__link" href="#">Directions &rarr;</a>
+          <div class="tag-row"><span class="tag">Sales</span><span class="tag">Parts</span><span class="tag">Service</span></div>
+        </div>
+      </div>
+      <div class="spec__label" style="margin-top:14px">.location-card — fixed 300px in a scroll-snap rail. Brand dots come from <code>.brand-dot--*</code> in themes.css.</div>
+    </div>
+
+    <div class="stage stage--ink">
+      <div class="stats">
+        <div class="stat-card">
+          <div class="stat-card__icon" aria-hidden="true">&#9881;</div>
+          <div><div class="stat-card__value">180+</div><div class="stat-card__label">Service Technicians</div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card__icon" aria-hidden="true">&#10003;</div>
+          <div><div class="stat-card__value">12+</div><div class="stat-card__label">Certified FDOE Bus Safety Inspectors</div></div>
+        </div>
+      </div>
+      <div class="spec__label" style="margin-top:14px;color:var(--on-dark-2)">.stat-card — on ink only. <code>.stats--rule</code> adds the 3px accent top border used on Kenworth.</div>
+    </div>
+
+    <div class="stage">
+      <div class="blog-grid" style="max-width:600px">
+        <a class="blog-card" href="#">
+          <div class="blog-card__media"><img src="../assets/blog-bus-1.jpg" alt=""></div>
+          <h3 class="blog-card__title">Preventive Maintenance 101: When to Schedule, When to React</h3>
+        </a>
+        <a class="blog-card" href="#">
+          <div class="blog-card__media"><span class="blog-card__category">Fleet</span></div>
+          <h3 class="blog-card__title">Empty media state falls back to the hatch pattern</h3>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================================================== NAVIGATION -->
+<section class="doc-section" id="nav">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Components</div>
+    <h2 class="title-md">Navigation</h2>
+    <p class="doc-note">The header sits over the hero photo, so the nav has its own translucent ink plate rather than relying on the image for contrast. Links collapse to the hamburger at 1100px — before they can wrap, not at a device width.</p>
+
+    <div class="stage stage--ink" style="padding:0">
+      <div class="utility-bar">
+        <div class="utility-bar__group">
+          <a class="utility-bar__phone" href="#"><span aria-hidden="true">&#9742;</span>800-741-7566</a>
+          <span class="utility-bar__meta">6020 Adamo Drive, Tampa, FL 33619</span>
+        </div>
+        <div class="utility-bar__group utility-bar__group--end">
+          <a class="utility-bar__link" href="#">Careers</a>
+          <a class="utility-bar__link" href="#"><span aria-hidden="true">&#9678;</span>17 Locations</a>
+        </div>
+      </div>
+      <div style="padding:24px">
+        <nav class="nav" style="margin:0;display:inline-flex" aria-label="Example">
+          <div class="nav__item"><a class="nav__link" href="#nav">Inventory <span class="nav__caret" aria-hidden="true">&#9662;</span></a></div>
+          <div class="nav__item"><a class="nav__link" href="#nav">Service</a></div>
+          <div class="nav__item"><a class="nav__link nav__link--current" href="#nav" aria-current="page">Financing</a></div>
+          <button class="nav__search" type="button" aria-label="Search">&#8981;</button>
+        </nav>
+      </div>
+    </div>
+
+<pre>&lt;div class="nav__item" data-dropdown&gt;
+  &lt;a class="nav__link" href="#inventory" aria-expanded="false"&gt;Inventory &lt;span class="nav__caret"&gt;&#9662;&lt;/span&gt;&lt;/a&gt;
+  &lt;div class="nav__menu" hidden&gt;
+    &lt;a class="nav__menu-link" href="#inventory"&gt;All Inventory&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+  </div>
+</section>
+
+<!-- ============================================================ BEHAVIOR -->
+<section class="doc-section" id="behavior">
+  <div class="doc-section__inner">
+    <div class="doc-kicker">Behavior</div>
+    <h2 class="title-md">JavaScript hooks</h2>
+    <p class="doc-note">All behavior lives in <code>js/site.js</code> — no dependencies, no build step. Each behavior is opt-in through a data attribute, so markup can move into any template language without touching the script.</p>
+
+    <table>
+      <thead><tr><th>Attribute</th><th>What it does</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><code>data-nav-toggle</code></td><td>Opens the mobile panel named by <code>aria-controls</code></td><td>Keeps <code>aria-expanded</code> in sync; closes on link click</td></tr>
+        <tr><td><code>data-dropdown</code></td><td>Header dropdown</td><td>Hover, focus-within, click (touch), Escape to close</td></tr>
+        <tr><td><code>data-quote-carousel</code></td><td>Testimonial rotator</td><td>Children: <code>data-quote</code>, <code>data-quote-dot</code>, <code>data-quote-prev/next</code></td></tr>
+        <tr><td><code>data-carousel3d</code></td><td>Coverflow brand/model picker</td><td>Cards are <code>data-carousel3d-item</code>; arrows live in <code>data-carousel3d-scope</code>. Drag threshold 40px</td></tr>
+        <tr><td><code>data-location-filter</code></td><td>Chip filtering over location cards</td><td>Chips carry <code>data-filter-group</code> + <code>data-filter-value</code>; cards carry <code>data-&lt;group&gt;</code> with <code>|</code>-separated values. Zero-result options are auto-disabled</td></tr>
+        <tr><td><code>data-demo-form</code></td><td>Front-end-only confirmation</td><td>Message from <code>data-success</code>; replace with a real endpoint at build time</td></tr>
+        <tr><td><code>data-back-to-top</code></td><td>Reveals after 600px of scroll</td><td>Toggles <code>data-visible</code></td></tr>
+        <tr><td><code>data-save</code></td><td>Favorite toggle on a listing card</td><td>State in <code>aria-pressed</code>; not persisted</td></tr>
+        <tr><td><code>data-year</code></td><td>Writes the current year</td><td>Footer copyright</td></tr>
+        <tr><td><code>data-screen-label</code></td><td>Section name for review and QA</td><td>No behavior attached</td></tr>
+      </tbody>
+    </table>
+
+    <p class="doc-note" style="margin-top:24px">The location filter is the one piece worth reading before you port it: it recomputes which options would return results after each change and marks the dead ones <code>aria-disabled</code>, so a user can never filter into an empty rail.</p>
+  </div>
+</section>
+
+<footer class="site-footer" style="padding-top:40px">
+  <div class="site-footer__bottom" style="padding-top:0">
+    <span>Dealer site design handoff &middot; <a href="../index.html">Back to overview</a></span>
+    <span class="site-footer__built">Built by <img src="../assets/buzznerd-logo-white-cropped.png" alt="Buzznerd"></span>
+  </div>
+</footer>
+
+<script src="../js/site.js"></script>
+</body>
+</html>

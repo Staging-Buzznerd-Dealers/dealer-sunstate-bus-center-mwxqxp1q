@@ -2,45 +2,140 @@
   "version": 2,
   "id": "default",
   "name": "Site template",
-  "conditions": [{ "type": "entireSite", "ref": null }],
+  "conditions": [
+    {
+      "type": "entireSite",
+      "ref": null
+    }
+  ],
   "nodes": [
+    {
+      "id": "utility",
+      "type": "sharedSection",
+      "props": {
+        "sectionId": "utility-bar",
+        "values": {
+          "phone": "800-741-7566",
+          "address": "6020 Adamo Drive, Tampa, FL 33619",
+          "social": [
+            {
+              "image": {
+                "src": "/img/icon-facebook-white.svg",
+                "alt": "Facebook"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-instagram-white.svg",
+                "alt": "Instagram"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-linkedin-white.svg",
+                "alt": "LinkedIn"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-twitter-white.svg",
+                "alt": "Twitter"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-youtube-white.svg",
+                "alt": "YouTube"
+              },
+              "url": "#"
+            }
+          ]
+        }
+      }
+    },
     {
       "id": "header",
       "type": "section",
-      "props": { "width": "boxed", "paddingY": 3, "background": "card" },
+      "props": {
+        "width": "boxed",
+        "paddingY": 3,
+        "background": "ink"
+      },
       "children": [
         {
           "id": "header-row",
           "type": "row",
-          "props": { "gap": 5, "align": "center", "stackOn": "mobile" },
+          "props": {
+            "gap": 5,
+            "align": "center",
+            "stackOn": "mobile"
+          },
           "children": [
             {
               "id": "header-brand",
               "type": "column",
-              "props": { "span": 3, "align": "center" },
-              "children": [{ "id": "logo", "type": "logo", "props": { "url": "/", "height": 34 } }]
+              "props": {
+                "span": 3,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "logo",
+                  "type": "logo",
+                  "props": {
+                    "image": {
+                      "src": "/img/sun-state-logo.png",
+                      "alt": "Sun State Bus Centers"
+                    },
+                    "url": "/",
+                    "height": 44
+                  }
+                }
+              ]
             },
             {
               "id": "header-nav",
               "type": "column",
-              "props": { "span": 6, "align": "center" },
+              "props": {
+                "span": 7,
+                "align": "center"
+              },
               "children": [
                 {
                   "id": "main-nav",
                   "type": "menu",
-                  "props": { "menuId": "main", "layout": "horizontal", "align": "center", "collapseOnMobile": true }
+                  "props": {
+                    "menuId": "main",
+                    "layout": "horizontal",
+                    "align": "center",
+                    "collapseOnMobile": true
+                  }
                 }
               ]
             },
             {
               "id": "header-cta",
               "type": "column",
-              "props": { "span": 3, "align": "center" },
+              "props": {
+                "span": 2,
+                "align": "center"
+              },
               "children": [
                 {
                   "id": "header-button",
                   "type": "buttons",
-                  "props": { "items": [{ "ctaId": "browse-inventory" }], "align": "left" }
+                  "props": {
+                    "items": [
+                      {
+                        "ctaId": "schedule-service"
+                      }
+                    ],
+                    "align": "left"
+                  }
                 }
               ]
             }
@@ -48,37 +143,161 @@
         }
       ]
     },
-    { "id": "content", "type": "contentArea", "props": { "label": "Page content" } },
+    {
+      "id": "content",
+      "type": "contentArea",
+      "props": {
+        "label": "Page content"
+      }
+    },
     {
       "id": "footer",
       "type": "section",
-      "props": { "width": "boxed", "paddingY": 7, "background": "ink" },
+      "props": {
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 7
+      },
       "children": [
         {
           "id": "footer-row",
           "type": "row",
-          "props": { "gap": 6, "align": "start" },
+          "props": {
+            "gap": 6,
+            "stackOn": "tablet"
+          },
           "children": [
             {
               "id": "footer-brand",
               "type": "column",
-              "props": { "span": 4 },
-              "children": [{ "id": "footer-logo", "type": "logo", "props": { "url": "/", "height": 28 } }]
+              "props": {
+                "span": 12
+              },
+              "children": [
+                {
+                  "id": "footer-logo",
+                  "type": "logo",
+                  "props": {
+                    "image": {
+                      "src": "/img/sun-state-logo.png",
+                      "alt": "Sun State Bus Centers"
+                    },
+                    "url": "/",
+                    "height": 44
+                  }
+                },
+                {
+                  "id": "footer-about",
+                  "type": "text",
+                  "props": {
+                    "text": "Sun State Bus Centers is proud to be part of the IC Bus family of dealers as the IC Bus sales dealer for the state of Florida, offering sales, parts, and service. We're a division of Sun State International Trucks, an authorized franchise of International Truck & Engine Corporation, located in Tampa, Sarasota, and Davenport, Florida.",
+                    "width": "full"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "footer-columns",
+      "type": "sharedSection",
+      "props": {
+        "sectionId": "footer-links",
+        "values": {
+          "groups": [
+            {
+              "title": "Shop",
+              "menuId": "footer-shop"
             },
             {
-              "id": "footer-links",
+              "title": "Support",
+              "menuId": "footer-support"
+            },
+            {
+              "title": "Company",
+              "menuId": "footer-company"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "footer-bottom",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "background": "ink",
+        "paddingY": 3
+      },
+      "children": [
+        {
+          "id": "fb2-row",
+          "type": "row",
+          "props": {
+            "gap": 4,
+            "align": "center",
+            "stackOn": "tablet"
+          },
+          "children": [
+            {
+              "id": "fb2-legal",
               "type": "column",
-              "props": { "span": 4 },
+              "props": {
+                "span": 6,
+                "align": "center"
+              },
               "children": [
-                { "id": "footer-nav", "type": "menu", "props": { "menuId": "footer", "layout": "vertical" } }
+                {
+                  "id": "fb2-copy",
+                  "type": "text",
+                  "props": {
+                    "text": "© Sun State Bus Centers. All rights reserved.",
+                    "width": "full"
+                  }
+                }
               ]
             },
             {
-              "id": "footer-legal",
+              "id": "fb2-menu",
               "type": "column",
-              "props": { "span": 4 },
+              "props": {
+                "span": 4,
+                "align": "center"
+              },
               "children": [
-                { "id": "legal-nav", "type": "menu", "props": { "menuId": "legal", "layout": "vertical" } }
+                {
+                  "id": "fb2-menu-m",
+                  "type": "menu",
+                  "props": {
+                    "menuId": "legal",
+                    "layout": "horizontal",
+                    "align": "end",
+                    "depth": 1
+                  }
+                }
+              ]
+            },
+            {
+              "id": "fb2-built",
+              "type": "column",
+              "props": {
+                "span": 2,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "fb2-built-img",
+                  "type": "image",
+                  "props": {
+                    "image": {
+                      "src": "/img/buzznerd-logo-white-cropped.png",
+                      "alt": "Built by Buzznerd"
+                    },
+                    "width": "prose"
+                  }
+                }
               ]
             }
           ]

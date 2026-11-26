@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Base — reset, document defaults, typographic primitives, helpers
+   ========================================================================== */
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--color-paper);
+  color:var(--color-ink);
+  font-family:var(--font-body);
+  font-size:var(--text-base);
+  line-height:var(--leading-normal);
+  overflow-x:hidden;
+  text-wrap:pretty;
+}
+
+img,svg,video{max-width:100%}
+img{border-style:none}
+
+a{color:var(--color-accent-text);text-decoration:none}
+a:hover{color:color-mix(in oklch, var(--color-accent-text) 80%, black)}
+
+button,input,select,textarea{font:inherit;color:inherit}
+
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+
+::selection{background:var(--color-accent-soft);color:var(--color-ink)}
+
+/* Visible focus everywhere. Never remove without a replacement. */
+:focus-visible{
+  outline:2px solid var(--color-accent-text);
+  outline-offset:2px;
+  border-radius:2px;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+
+/* --- Layout primitives ------------------------------------------------ */
+.container{width:100%;max-width:var(--measure);margin-inline:auto;padding-inline:var(--gutter)}
+.container--narrow{max-width:var(--measure-narrow)}
+.container--reading{max-width:1100px}
+
+.section{padding-block:var(--space-12)}
+.section--tight{padding-block:var(--space-11)}
+.section--ink{background:var(--color-ink);color:var(--white)}
+.section--ink h2,.section--ink h3{color:var(--white)}
+.section--alt{background:var(--color-paper-alt)}
+.section--accent{background:var(--color-accent);color:var(--color-accent-on)}
+
+/* Two-up split that collapses on its own — no breakpoint needed */
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:var(--space-8)}
+.split--wide-gap{gap:48px}
+
+/* --- Typographic primitives ------------------------------------------ */
+.eyebrow{
+  font-family:var(--font-body);
+  font-weight:700;
+  font-size:var(--text-2xs);
+  letter-spacing:var(--tracking-label);
+  text-transform:uppercase;
+  color:var(--color-accent-text);
+  margin-bottom:var(--space-2);
+}
+.eyebrow--on-ink{color:var(--color-accent)}
+.eyebrow--muted{color:var(--color-muted)}
+
+.title-xl{font-size:var(--text-hero);line-height:var(--leading-tight)}
+.title-lg{font-size:var(--text-h2);line-height:1.15}
+.title-md{font-size:var(--text-h3);line-height:1.2}
+.title-sm{font-size:var(--text-h4);line-height:1.25}
+.title--caps{text-transform:uppercase;letter-spacing:.01em}
+
+.lede{font-size:var(--text-lead);line-height:var(--leading-normal)}
+.prose{font-size:16px;line-height:var(--leading-relaxed);color:var(--color-body)}
+.prose > * + *{margin-top:var(--space-4)}
+.prose--sm{font-size:var(--text-base);line-height:1.65}
+
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  flex-wrap:wrap;gap:var(--space-5);margin-bottom:var(--space-7);
+}
+
+/* --- Helpers ---------------------------------------------------------- */
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+.skip-link{
+  position:absolute;left:var(--space-2);top:-60px;z-index:var(--z-skip);
+  background:var(--color-ink);color:var(--white);
+  padding:11px var(--space-4);border-radius:var(--radius-md);
+  font-weight:600;font-size:var(--text-sm);
+}
+.skip-link:focus{top:var(--space-2);color:var(--white)}
+
+[hidden]{display:none !important}
+
+@keyframes fade-up{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}

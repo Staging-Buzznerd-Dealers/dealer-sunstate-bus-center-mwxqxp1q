@@ -1,14 +1,14 @@
 [
   {
     "slug": "home",
-    "title": "Home",
-    "description": "New and used trucks, service and parts from a dealer you can trust.",
+    "title": "Florida's Premier IC Bus Dealer",
+    "description": "Sun State Bus Centers is the exclusive IC Bus sales, parts, and service dealer for the state of Florida. Shop new and used school buses, schedule certified service, and order OEM parts.",
     "path": "/",
     "out": "index.html",
     "dir": "home",
     "status": "published",
     "seo": {
-      "ogImage": null,
+      "ogImage": "/img/hero-bus.jpg",
       "noindex": false
     },
     "templates": {
@@ -17,5 +17,24 @@
       "utilityNav": null
     },
     "pageType": "Home"
+  },
+  {
+    "slug": "financing",
+    "title": "Financing & Warranty",
+    "description": "Flexible financing and Bus Master Warranty protection plans for new and used IC Bus school buses at Sun State Bus Centers.",
+    "path": "/financing",
+    "out": "financing/index.html",
+    "dir": "financing",
+    "group": "about",
+    "status": "published",
+    "seo": {
+      "ogImage": "/img/hero-bus.jpg",
+      "noindex": false
+    },
+    "templates": {
+      "header": null,
+      "footer": null,
+      "utilityNav": null
+    }
   }
 ]

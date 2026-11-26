@@ -1,14 +1,14 @@
 {
   "$schema": "./dealer.config.schema.json",
   "contractVersion": "5.0.0",
-  "name": "BuzzNerd Dealer",
-  "shortName": "BuzzNerd",
+  "name": "Sun State Bus Centers",
+  "shortName": "Sun State",
   "channelToken": "sunstate-bus-center-mwxqxp1q",
   "domain": "dealer-sunstate-bus-center-mwxqxp1q.vercel.app",
   "url": "https://dealer-sunstate-bus-center-mwxqxp1q.vercel.app",
   "storefrontOrigin": "https://sunstate-bus-center.ai4dealerships.com",
   "storefrontPrefix": "store",
-  "logo": "/logo.svg",
+  "logo": "/img/sun-state-logo.png",
   "favicon": "/favicon.svg",
   "analytics": {
     "loaderUrl": null,
@@ -16,16 +16,16 @@
   },
   "business": {
     "type": "AutoDealer",
-    "legalName": "BuzzNerd Trucks LLC",
-    "phone": "+1-800-555-0100",
+    "legalName": "Sun State International Trucks",
+    "phone": "+1-800-741-7566",
     "email": "sales@example.com",
-    "streetAddress": "1234 Highway Dr",
-    "addressLocality": "Salt Lake City",
-    "addressRegion": "UT",
-    "postalCode": "84101",
+    "streetAddress": "6020 Adamo Drive",
+    "addressLocality": "Tampa",
+    "addressRegion": "FL",
+    "postalCode": "33619",
     "addressCountry": "US",
-    "latitude": 40.7608,
-    "longitude": -111.891,
+    "latitude": 27.9506,
+    "longitude": -82.3921,
     "priceRange": "$$",
     "openingHours": [
       "Mo-Fr 08:00-18:00",
@@ -33,11 +33,11 @@
     ]
   },
   "seo": {
-    "defaultTitle": "BuzzNerd Dealer | Trucks, Parts & Service",
-    "titleTemplate": "%s | BuzzNerd Dealer",
-    "defaultDescription": "New and used trucks, expert service, genuine parts, financing and leasing from a dealer you can trust.",
-    "ogImage": "/og-default.jpg",
+    "defaultTitle": "Sun State Bus Centers | New & Used IC Bus Sales, Service & Parts",
+    "titleTemplate": "%s | Sun State Bus Centers",
+    "defaultDescription": "Exclusive IC Bus sales, parts, and service dealer for the state of Florida. Shop new and used school buses, schedule certified service, and order OEM parts.",
+    "ogImage": "/img/hero-bus.jpg",
     "locale": "en_US",
-    "themeColor": "#111c3a"
+    "themeColor": "#1A1714"
   }
 }
