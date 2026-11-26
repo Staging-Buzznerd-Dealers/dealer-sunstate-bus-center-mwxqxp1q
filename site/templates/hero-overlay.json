@@ -1,0 +1,106 @@
+{
+  "version": 2,
+  "id": "hero-overlay",
+  "name": "Header over hero",
+  "conditions": [
+    {
+      "type": "page",
+      "ref": "home"
+    },
+    {
+      "type": "page",
+      "ref": "financing"
+    }
+  ],
+  "css": "[data-bz-node=\"sh\"]{position:absolute;left:0;right:0;z-index:20;background:transparent}",
+  "nodes": [
+    {
+      "id": "utility",
+      "type": "sharedSection",
+      "props": {
+        "sectionId": "utility-bar",
+        "values": {
+          "phone": "800-741-7566",
+          "address": "6020 Adamo Drive, Tampa, FL 33619",
+          "social": [
+            {
+              "image": {
+                "src": "/img/icon-facebook-white.svg",
+                "alt": "Facebook"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-instagram-white.svg",
+                "alt": "Instagram"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-linkedin-white.svg",
+                "alt": "LinkedIn"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-twitter-white.svg",
+                "alt": "Twitter"
+              },
+              "url": "#"
+            },
+            {
+              "image": {
+                "src": "/img/icon-youtube-white.svg",
+                "alt": "YouTube"
+              },
+              "url": "#"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "header",
+      "type": "sharedSection",
+      "props": {
+        "sectionId": "site-header",
+        "values": {}
+      }
+    },
+    {
+      "id": "content",
+      "type": "contentArea",
+      "props": {
+        "label": "Page content"
+      }
+    },
+    {
+      "id": "footer",
+      "type": "sharedSection",
+      "props": {
+        "sectionId": "site-footer",
+        "values": {
+          "about": "Sun State Bus Centers is proud to be part of the IC Bus family of dealers as the IC Bus sales dealer for the state of Florida, offering sales, parts, and service. We're a division of Sun State International Trucks, an authorized franchise of International Truck & Engine Corporation, located in Tampa, Sarasota, and Davenport, Florida.",
+          "copyright": "© Sun State Bus Centers. All rights reserved.",
+          "groups": [
+            {
+              "title": "Shop",
+              "menuId": "footer-shop"
+            },
+            {
+              "title": "Support",
+              "menuId": "footer-support"
+            },
+            {
+              "title": "Company",
+              "menuId": "footer-company"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

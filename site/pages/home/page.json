@@ -16,6 +16,9 @@
         "base": {
           "position": "relative",
           "overflow": "hidden",
+          "paddingTop": 140,
+          "paddingBottom": 110,
+          "minHeight": 600,
           "backgroundImage": "/img/hero-bus.jpg",
           "backgroundSize": "cover",
           "backgroundPosition": "center"
@@ -32,7 +35,7 @@
             "base": {
               "position": "absolute",
               "inset": 0,
-              "background": "#1A1714@72%"
+              "background": "#1A1714@55%"
             }
           }
         },

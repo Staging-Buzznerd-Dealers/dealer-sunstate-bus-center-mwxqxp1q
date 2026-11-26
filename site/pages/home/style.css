@@ -1,0 +1,4 @@
+/* Eyebrow over the hero photo: the design sets it as a glass pill. */
+[data-bz-node="hero-h"] .bz-eyebrow{display:inline-block;padding:10px 14px;margin-bottom:var(--space-5);border:1px solid rgba(255,255,255,.28);border-radius:7px;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-weight:700;letter-spacing:.12em}
+[data-bz-node="hero"] h1{color:#fff;max-width:14ch}
+[data-bz-node="hero-lede"] p{color:#EDE9E0;font-size:18px;line-height:1.6;max-width:520px}

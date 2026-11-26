@@ -1,0 +1,73 @@
+{
+  "version": 2,
+  "id": "site-header",
+  "name": "Site header",
+  "css": "[data-bz-node=\"sh\"]{color:#fff}\n[data-bz-node=\"sh\"] .bz-block{padding-block:0}\n[data-bz-node=\"sh\"] .bz-container{max-width:var(--container)}\n[data-bz-node=\"sh-nav\"]{display:flex;justify-content:flex-end}\n[data-bz-node=\"sh-nav\"] .bz-menu-wrap{flex:0 1 auto}\n[data-bz-node=\"sh-nav\"] .bz-menu-toggle{color:#fff;border-color:rgba(255,255,255,.4);background:rgb(26 23 20 / 55%)}\n@media (min-width:1101px){\n  [data-bz-node=\"sh-nav\"] .bz-menu-wrap{background:rgb(26 23 20 / 55%);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:var(--radius-nav);padding:6px 10px}\n  [data-bz-node=\"sh-nav\"] .bz-nav{gap:2px}\n  [data-bz-node=\"sh-nav\"] .bz-navitem > a{color:#fff;font:700 14px/1.2 var(--font-body);letter-spacing:.04em;text-transform:uppercase;padding:10px 14px;border-radius:7px}\n  [data-bz-node=\"sh-nav\"] .bz-navitem > a:hover{background:rgba(255,255,255,.1);color:#fff}\n  [data-bz-node=\"sh-nav\"] .bz-navitem > a[aria-current=\"page\"]{color:var(--accent)}\n  [data-bz-node=\"sh-nav\"] .bz-subnav{top:calc(100% + 6px);left:0;padding:var(--space-2);min-width:12rem}\n  [data-bz-node=\"sh-nav\"] .bz-subnav .bz-navitem > a{color:var(--ink);text-transform:none;letter-spacing:0;font-weight:600;display:block}\n  [data-bz-node=\"sh-nav\"] .bz-subnav .bz-navitem > a:hover{background:var(--paper);color:var(--ink)}\n}\n@media (max-width:1100px){\n  [data-bz-node=\"sh-nav\"] .bz-menu-wrap[data-open] > .bz-menu{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.16)}\n  [data-bz-node=\"sh-nav\"] .bz-menu-wrap[data-open] .bz-navitem > a{color:#fff;font:600 16px/1.3 var(--font-body);padding:var(--space-2) 0}\n  [data-bz-node=\"sh-nav\"] .bz-menu-wrap[data-open] .bz-subnav{background:none;border:0;box-shadow:none;position:static;display:flex}\n  [data-bz-node=\"sh-nav\"] .bz-menu-wrap[data-open] .bz-subnav .bz-navitem > a{color:#D8D2C4}\n}",
+  "props": [],
+  "nodes": [
+    {
+      "id": "sh",
+      "type": "section",
+      "props": {
+        "width": "boxed",
+        "background": "none",
+        "paddingY": 4
+      },
+      "children": [
+        {
+          "id": "sh-row",
+          "type": "row",
+          "props": {
+            "gap": 5,
+            "align": "center",
+            "stackOn": "never"
+          },
+          "children": [
+            {
+              "id": "sh-brand",
+              "type": "column",
+              "props": {
+                "span": 4,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "sh-logo",
+                  "type": "logo",
+                  "props": {
+                    "image": {
+                      "src": "/img/sun-state-logo.png",
+                      "alt": "Sun State Bus Centers"
+                    },
+                    "url": "/",
+                    "height": 44
+                  }
+                }
+              ]
+            },
+            {
+              "id": "sh-nav",
+              "type": "column",
+              "props": {
+                "span": 8,
+                "align": "center"
+              },
+              "children": [
+                {
+                  "id": "sh-menu",
+                  "type": "menu",
+                  "props": {
+                    "menuId": "main",
+                    "layout": "horizontal",
+                    "align": "end",
+                    "collapseOnMobile": true
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
